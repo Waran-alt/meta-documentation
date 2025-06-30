@@ -1,0 +1,7 @@
+# Ignore project-specific outputs (these stay in the main project repo)
+outputs/
+
+# Ignore private custom content (these stay local)
+custom/private/
+
+# Private directory contains project-specific documentation and personal reminders that should not be shared across projects or committed to version control in template repositories 
