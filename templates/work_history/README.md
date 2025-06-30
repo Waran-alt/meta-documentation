@@ -14,21 +14,23 @@ The work history documentation system is designed to:
 ## Structure
 
 ### File Organization
-The file organization follows the meta folder structure:
+The file organization follows the meta-documentation submodule structure:
 ```
-meta/
-├── templates/work_history/              # This directory - Rules and templates
-│   ├── assets/                          # Template files and standards
-│   │   ├── conversation_tracking.md    # Context tracking template
-│   │   ├── commit_message_convention.md # Commit standards
-│   │   └── TEMPLATE.md                  # WHEF template
-│   └── README.md                        # This file
-└── outputs/work_history/                # Generated files location
-    └── branches/                        # Branch-specific documentation
-        ├── [branch-name]/               # Documentation for any branch
-        │   ├── [WHEF]                   # .md files
-        │   └── ...
-        └── ...
+your-project/
+├── meta-documentation/                  # Git submodule
+│   └── templates/work_history/          # This directory - Rules and templates
+│       ├── assets/                      # Template files and standards
+│       │   ├── conversation_tracking.md # Context tracking template
+│       │   ├── commit_message_convention.md # Commit standards
+│       │   └── TEMPLATE.md              # WHEF template
+│       └── README.md                    # This file
+└── meta-documentation-outputs/          # Project-level outputs directory
+    └── work_history/                    # Generated files location
+        └── branches/                    # Branch-specific documentation
+            ├── [branch-name]/           # Documentation for any branch
+            │   ├── [WHEF]               # .md files
+            │   └── ...
+            └── ...
 ```
 
 ### Branch Organization
@@ -40,7 +42,7 @@ The system supports documentation for any branch in your project, for example:
 - `release/` - For release branches
 - Any other branch structure your project uses
 
-Each branch folder in `../outputs/work_history/branches/` contains its own chronological documentation, maintaining a clear history of changes specific to that branch.
+Each branch folder in `meta-documentation-outputs/work_history/branches/` contains its own chronological documentation, maintaining a clear history of changes specific to that branch.
 
 ## Conventions
 
@@ -106,12 +108,12 @@ Commits with WHEF examples:
          - Else go to step 3
 
 3. **Create the WHEF**
-   - Copy `assets/TEMPLATE.md` to appropriate branch folder in `../outputs/work_history/branches/[branch]/`
+   - Copy `meta-documentation/templates/work_history/assets/TEMPLATE.md` to appropriate branch folder in `meta-documentation-outputs/work_history/branches/[branch]/`
    - Rename using naming convention
    - Based on the git staging area, fill in details following template structure (including guideline parenthesis and validation checklist)
 
 4. **Add Details**
-   - Read `assets/conversation_tracking.md`: Review the conversation tracking file to gather additional context and details about the changes made
+   - Read `meta-documentation-outputs/templates/work_history/conversation_tracking.md`: Review the project's conversation tracking file to gather additional context and details about the changes made
 
 5. **User Validation**
    - Present the draft entry to the user for review and approval
@@ -170,11 +172,11 @@ Commits with WHEF examples:
 ## Output Management
 
 ### File Organization
-Generated WHEF files are stored in `../outputs/work_history/branches/[branch]/` following chronological order.
+Generated WHEF files are stored in `meta-documentation-outputs/work_history/branches/[branch]/` following chronological order.
 
 ### Templates vs Outputs
-- **Templates** (this directory): Contains rules, conventions, and template files
-- **Outputs** (`../outputs/work_history/`): Contains the actual generated WHEF files organized by branch
+- **Templates** (`meta-documentation/templates/work_history/`): Contains rules, conventions, and template files
+- **Outputs** (`meta-documentation-outputs/work_history/`): Contains the actual generated WHEF files organized by branch
 
 ### Archive Management
 - Keep all WHEF files for project history

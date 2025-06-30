@@ -1,7 +1,5 @@
-# Ignore project-specific outputs (these stay in the main project repo)
-outputs/
+# This template repository contains only reusable templates
+# Project-specific outputs should be created at the parent project level 
 
-# Ignore private custom content (these stay local)
-custom/private/
-
-# Private directory contains project-specific documentation and personal reminders that should not be shared across projects or committed to version control in template repositories 
+# Project-specific generated files
+meta-documentation-outputs/ 

@@ -100,4 +100,4 @@ _Status_: [To be updated]
 - Regular maintenance needed
 
 ## Template for Future Use
-This file serves as a template for tracking ongoing development work and can be populated with specific project details as development progresses. 
+This file serves as a template for tracking ongoing development work. To use it, copy this file to your project's `meta-documentation-outputs/work_history/` directory and maintain it there. 
